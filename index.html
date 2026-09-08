@@ -1,0 +1,116 @@
+<!-- /[ROOT]: Root element specifying English as the primary document language -->
+<!DOCTYPE html>
+
+<!-- /[ROOT]: Root element specifying English as the primary document language -->
+<html lang="en">
+<head>
+
+<!-- /[CHARSET]: Sets UTF-8 character encoding to support all standard characters and symbols -->
+<meta charset="UTF-8">
+
+<!--/[VIEWPORT]: Enables responsive web design by setting the layout width to the device screen width -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!--/[TITLE]: Defines the title displayed on the browser tab -->
+<title>Personal Library</title>
+
+<!--/[STYLESHEET]: Links the external CSS stylesheet for page layout and visual styles -->
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!--/[HEADER]: Banner area holding the primary page heading and global action button -->
+  <header>
+
+<!--/[HEADING]: Main application title -->
+    <h1>My Library</h1>
+
+<!--/[BUTTON]: Trigger button that opens the modal dialog via JavaScript listener -->
+    <button id="new-book-btn">+ Add New Book</button>
+  </header>
+
+<!--/[MAIN]: Main content landmark containing the core application elements -->
+  <main>
+
+<!--/[GRID CONTAINER]: Container div where JavaScript dynamically injects book card elements -->
+    <div id="library-container" class="library-grid"></div>
+  </main>
+
+<!--/[DIALOG]: Native HTML5 modal container for capturing new book details -->
+    <dialog id="book-dialog">
+    
+<!--/[FORM]: Form element to collect user input; submission is intercepted by JavaScript -->
+    <form id="book-form">
+
+<!--/[FORM HEADER]: Form title displayed inside the modal -->
+    <h2>Add a New Book</h2>
+
+<!--/[LABEL]: Accessible text label for the title input field -->
+    <label for="title">Title:</label>
+
+<!--/[INPUT]: Text input field for book title; required attribute enforces client validation -->
+     <input type="text" id="title" required>
+
+<!--/[LABEL]: Accessible text label for the author input field -->
+      <label for="author">Author:</label>
+
+<!--/[INPUT]: Text input field for book author name; required for validation -->
+      <input type="text" id="author" required>
+      
+<!--/[LABEL]: Accessible text label for page count input field -->
+      <label for="pages">Number of Pages:</label>
+      
+<!--/[INPUT]: Numeric input restricting values to a minimum of 1 page -->
+      <input type="number" id="pages" min="1" required>
+      
+<!--/[CHECKBOX WRAPPER]: Container to group checkbox input and label inline -->
+      <div class="checkbox-group">
+        
+<!--/[INPUT]: Checkbox toggle representing boolean read status -->
+        <input type="checkbox" id="isRead">
+        
+<!--/[LABEL]: Text label associated with read status checkbox -->
+        <label for="isRead">Have you read this book?</label>
+      </div>
+      
+<!--/[FORM ACTIONS]: Container grouping form action buttons -->
+      <div class="dialog-actions">
+        
+<!--/[SUBMIT BUTTON]: Triggers form 'submit' event handled by JavaScript -->
+        <button type="submit" class="btn-primary">Add Book</button>
+
+<!--/[CANCEL BUTTON]: Type='button' prevents form submit; triggers dialog.close() in JS -->
+        <button type="button" id="close-dialog-btn" class="btn-secondary">Cancel</button>
+      </div>
+    </form>
+  </dialog>
+
+<!--/[SCRIPT]: Links the JavaScript file at the end of body so DOM nodes exist before script executes -->
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
