@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- /xray [ROOT]: The root element which sets the document's primary language -->
+  <meta charset="UTF-8">
+  <!-- /xray [CHARSET]: Sets the character encoding to UTF-8 to support all standard characters/symbols -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- /xray [VIEWPORT]: Sets the responsive width to match the device viewing this page -->
+  
+  <title>Personal Library</title>
+  <!-- /xray [TITLE]: Sets the tab title for this document -->
+
+  <link rel="stylesheet" href="style.css">
+  <!-- /xray [STYLESHEET]: Links to our stylesheet for page layout & styling -->
+</head>
+<body>
+
+  <header>
+    <!-- /xray [HEADER]: Our header banner containing the main heading + global action button -->
+    <h1>My Library</h1>
+    <!-- /xray [HEADING]: Application name / primary page heading -->
+
+    <button id="new-book-btn">+ Add New Book</button>
+    <!-- /xray [BUTTON]: Adds event listener to toggle our modal form -->
+  </header>
+
+  <main>
+    <!-- /xray [MAIN]: Main content landmark containing our application's core content -->
+    <div id="library-container" class="library-grid"></div>
+    <!-- /xray [GRID CONTAINER]: Container div where JavaScript dynamically injects book card elements -->
+  </main>
+
+  <dialog id="book-dialog">
+    <!-- /xray [DIALOG]: Native HTML5 dialog/modal implementation -->
+    <form id="book-form">
+      <!-- /xray [FORM]: Simple form to collect our book submission data -->
+      
+      <h2>Add a New Book</h2>
+      <!-- /xray [FORM HEADER]: Page heading inside our dialog -->
+
+      <label for="title">Title:</label>
+      <!-- /xray [LABEL]: Accessibility label for the title input -->
+      <input type="text" id="title" required>
+      <!-- /xray [INPUT]: Input box for user to type book title -->
+
+      <label for="author">Author:</label>
+      <!-- /xray [LABEL]: Accessibility label for the author input -->
+      <input type="text" id="author" required>
+      <!-- /xray [INPUT]: Input box for user to type book author -->
+
+      <label for="pages">Number of Pages:</label>
+      <!-- /xray [LABEL]: Accessibility label for the pages input -->
+      <input type="number" id="pages" min="1" required>
+      <!-- /xray [INPUT]: Input box that only accepts numeric values -->
+
+      <div class="checkbox-group">
+        <!-- /xray [CHECKBOX WRAPPER]: Container to hold checkbox + label -->
+        <input type="checkbox" id="isRead">
+        <!-- /xray [INPUT]: Checkbox element to track if book is read -->
+        
+        <label for="isRead">Have you read this book?</label>
+        <!-- /xray [LABEL]: Text for our read checkbox -->
+      </div>
+
+      <div class="dialog-actions">
+        <!-- /xray [FORM ACTIONS]: Container for our form buttons -->
+        <button type="submit" class="btn-primary">Add Book</button>
+        <!-- /xray [SUBMIT BUTTON]: Submits the form to our JavaScript -->
+
+        <button type="button" id="close-dialog-btn" class="btn-secondary">Cancel</button>
+        <!-- /xray [CANCEL BUTTON]: Dismisses the modal form -->
+      </div>
+    </form>
+  </dialog>
+
+  <script src="script.js"></script>
+  <!-- /xray [SCRIPT]: Loads our script file at the end of the document -->
+</body>
+</html>
